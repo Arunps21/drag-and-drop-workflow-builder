@@ -28,7 +28,7 @@ This project is a **Drag-and-Drop Workflow Builder** built using **React** and *
    ```
 3. Start the development server:
    ```sh
-   npm start
+   npm run dev
    ```
 
 ## File Structure
@@ -50,60 +50,6 @@ workflow-builder/
 2. **Connecting Nodes**: Drag from one node's source handle to another's target handle.
 3. **Editing Nodes**: Click on a node to edit its properties.
 4. **Saving Workflows**: Workflows can be stored locally or sent to an API.
-
-## Custom Node Example
-To define a custom node type, create a component like `ProcessNode.js`:
-
-```jsx
-import React from "react";
-import { Handle, Position } from "reactflow";
-
-const ProcessNode = ({ data }) => {
-  return (
-    <div style={{ padding: 10, border: "1px solid black", borderRadius: 5 }}>
-      <strong>{data.label}</strong>
-      <Handle type="target" position={Position.Top} />
-      <Handle type="source" position={Position.Bottom} />
-    </div>
-  );
-};
-
-export default ProcessNode;
-```
-
-## Registering Custom Nodes
-In `WorkflowCanvas.jsx`, register the custom node type:
-
-```jsx
-import React from "react";
-import ReactFlow from "reactflow";
-import "reactflow/dist/style.css";
-import ProcessNode from "./ProcessNode";
-
-const nodeTypes = {
-  Process: ProcessNode,
-};
-
-const WorkflowCanvas = ({ nodes, edges }) => {
-  return <ReactFlow nodes={nodes} edges={edges} nodeTypes={nodeTypes} />;
-};
-
-export default WorkflowCanvas;
-```
-
-## Example Node Data
-Define nodes with correct types:
-
-```jsx
-const nodes = [
-  {
-    id: "1",
-    type: "Process",
-    position: { x: 100, y: 100 },
-    data: { label: "Start Process" },
-  },
-];
-```
 
 ## License
 This project is licensed under the MIT License.
