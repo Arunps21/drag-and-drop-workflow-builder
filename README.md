@@ -19,7 +19,7 @@ This project is a **Drag-and-Drop Workflow Builder** built using **React** and *
 ## Installation
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/workflow-builder.git
+   git clone https://github.com/Arunps21/drag-and-drop-workflow-builder.git
    cd workflow-builder
    ```
 2. Install dependencies:
